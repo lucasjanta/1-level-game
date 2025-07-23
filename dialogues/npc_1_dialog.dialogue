@@ -1,0 +1,19 @@
+~ start
+Suspicious Druid: [[Hi|Hey|Hello]], are you new around here?
+- Yeah, it's my first time in this city...
+	Suspicious Druid: Well, let me introduce myself...
+	I'm a famous potion maker and I manage to feed my child by selling this precious elixir
+	Would you like to buy the one I have? It makes you bigger for 1 minute!
+	- I want to buy! (-25G)
+		set Global.coins -= 25
+		Suspicious Druid: There you go, bye!
+	- No, I'm ok!
+		Suspicious Druid: What a waste of time...
+- Nah, I already know the place...
+	Suspicious Druid: I've never seen you around, well, do you want to buy a potion?
+	- Yeah, give it to me! (-15G)
+		Suspicious Druid: There you go, bye!
+	- Nah, I'm fine!
+		Suspicious Druid: Ok, bye!
+- End the conversation => END
+=> END
