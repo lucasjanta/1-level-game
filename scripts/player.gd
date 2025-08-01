@@ -8,7 +8,13 @@ var direction = 0
 var is_jumping : bool = false
 var can_move : bool = false
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var animation_player = $AnimationPlayer
+@onready var idle_state = $StateMachine/IdleState
+@onready var itemanimation = $itemanimation
 
+
+func _ready():
+	Global.player = self
 
 func _physics_process(delta):
 	if can_move:

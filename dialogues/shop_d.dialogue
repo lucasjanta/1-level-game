@@ -1,7 +1,8 @@
 ~ start
 Merchant: [[Hi|Hello|Howdy]], do you want to buy something?
 - Yeah, let me see what you have
-	Nathan: show shop
+	set Global.shop_screen.visible = true
+	=> END
 - No, I want to ask something...
 	Nathan: Go ahead
 - Start again => start

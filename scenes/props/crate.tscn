@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://u4sm3pxbt20f"]
+
+[ext_resource type="Texture2D" uid="uid://bc6vogj3b8mrf" path="res://assets/props/deco/frame0000.png" id="1_c2erc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyq4m"]
+size = Vector2(30, 5)
+
+[node name="crate" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c2erc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_yyq4m")
+one_way_collision = true

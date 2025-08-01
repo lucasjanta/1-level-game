@@ -1,0 +1,210 @@
+[gd_scene load_steps=30 format=3 uid="uid://fbx784h7cvhw"]
+
+[ext_resource type="Texture2D" uid="uid://cdv8blwb3qvl0" path="res://assets/character/house_girl/Idle.png" id="1_77hr5"]
+[ext_resource type="Script" uid="uid://bytrmiormpbk1" path="res://scripts/young_girl_npc.gd" id="1_fm5tw"]
+[ext_resource type="Texture2D" uid="uid://bwada3k1eoogx" path="res://assets/character/house_girl/Walk.png" id="2_rgawq"]
+[ext_resource type="Script" uid="uid://bwvn4r35oomjp" path="res://scripts/state_machine/state_machine.gd" id="3_fm5tw"]
+[ext_resource type="Script" uid="uid://ys1s4q3chgqb" path="res://scenes/node.gd" id="3_hrkam"]
+[ext_resource type="FontFile" uid="uid://dc22c7i6h0wfw" path="res://assets/fonts/Kenney Mini.ttf" id="4_rgawq"]
+[ext_resource type="Script" uid="uid://cslqvxwk0v1kd" path="res://scenes/node_2.gd" id="4_wxy0r"]
+[ext_resource type="Script" uid="uid://bu0mx7ieib1g6" path="res://dialogues/dialogue_manager.gd" id="8_wxy0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm5tw"]
+size = Vector2(20, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16x7b"]
+size = Vector2(276, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16x7b"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrkam"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxy0r"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxlt1"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebf38"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6yju"]
+atlas = ExtResource("1_77hr5")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8oxe"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kfsx"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_455sc"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7mof"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af2xi"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhvq"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xrrw"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5jtg"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s68bc"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r77ij"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74bhp"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e53kk"]
+atlas = ExtResource("2_rgawq")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh31n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16x7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrkam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxy0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxlt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebf38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6yju")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kfsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_455sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7mof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af2xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xrrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5jtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s68bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r77ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74bhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e53kk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 11.0
+}]
+
+[node name="young_girl_npc" type="CharacterBody2D"]
+process_mode = 4
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_fm5tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_fm5tw")
+
+[node name="interact_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_16x7b")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_fm5tw")
+initial_state = NodePath("WalkState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_hrkam")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
+script = ExtResource("4_wxy0r")
+
+[node name="talk_label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = -41.0
+offset_right = 23.0
+offset_bottom = -18.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_rgawq")
+theme_override_font_sizes/font_size = 12
+text = "Talk (E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fh31n")
+animation = &"idle"
+frame_progress = 0.330426
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("8_wxy0r")
+dialogue_path = "res://dialogues/home_girl_npc.dialogue"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="body_entered" from="interact_area" to="StateMachine/WalkState" method="_on_interact_area_body_entered"]

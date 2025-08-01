@@ -1,0 +1,201 @@
+[gd_scene load_steps=17 format=3 uid="uid://c1hwn0hfxxte0"]
+
+[ext_resource type="Script" uid="uid://bqdocfnp8den3" path="res://scripts/house.gd" id="1_3bgk5"]
+[ext_resource type="Texture2D" uid="uid://b7apx4wjm7wxm" path="res://assets/props/houses/inside_house.png" id="1_rk7hg"]
+[ext_resource type="Texture2D" uid="uid://dyk3orhh7y8ss" path="res://assets/props/houses/house3.png" id="2_se78b"]
+[ext_resource type="Texture2D" uid="uid://bwiq6nn72x6um" path="res://assets/props/houses/open_door.png" id="3_3bgk5"]
+[ext_resource type="FontFile" uid="uid://dc22c7i6h0wfw" path="res://assets/fonts/Kenney Mini.ttf" id="5_f74lx"]
+[ext_resource type="Texture2D" uid="uid://clog53cdl7ays" path="res://assets/props/houses/CatumetGamesFurniture.png" id="6_f74lx"]
+[ext_resource type="PackedScene" uid="uid://fbx784h7cvhw" path="res://scenes/young_girl_npc.tscn" id="7_ptc3g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f74lx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rk7hg")
+}],
+"loop": false,
+"name": &"inside",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_se78b")
+}],
+"loop": false,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_se78b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3bgk5")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk7hg"]
+size = Vector2(281.881, 8.72308)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se78b"]
+size = Vector2(257.345, 7.97638)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f74lx"]
+size = Vector2(402, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
+size = Vector2(65, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptc3g"]
+size = Vector2(15.7143, 385.714)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcu0q"]
+size = Vector2(17.1429, 385.714)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwc8c"]
+size = Vector2(477.143, 15.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhx8p"]
+size = Vector2(294.119, 13.5714)
+
+[node name="House" type="StaticBody2D"]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_3bgk5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f74lx")
+animation = &"inside"
+autoplay = "normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-119.76, -188.385)
+rotation = -0.371755
+shape = SubResource("RectangleShape2D_rk7hg")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(127.083, -188.873)
+rotation = 0.401426
+shape = SubResource("RectangleShape2D_se78b")
+one_way_collision = true
+
+[node name="second_floor_ground" type="CollisionShape2D" parent="."]
+position = Vector2(-41, 59)
+shape = SubResource("RectangleShape2D_f74lx")
+disabled = true
+one_way_collision = true
+
+[node name="door_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_area"]
+position = Vector2(-100.5, 192.5)
+shape = SubResource("RectangleShape2D_3bgk5")
+
+[node name="wall_left" type="CollisionShape2D" parent="."]
+position = Vector2(-225, 52.8572)
+shape = SubResource("RectangleShape2D_ptc3g")
+disabled = true
+
+[node name="wall_right" type="CollisionShape2D" parent="."]
+position = Vector2(222, 52.857)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_wcu0q")
+disabled = true
+
+[node name="rooftop" type="CollisionShape2D" parent="."]
+position = Vector2(-1.42854, -132.143)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_bwc8c")
+disabled = true
+
+[node name="stairs" type="CollisionShape2D" parent="."]
+position = Vector2(104.876, 154.989)
+rotation = -0.698132
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_mhx8p")
+disabled = true
+one_way_collision = true
+
+[node name="door_label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 88.571
+offset_right = -37.0
+offset_bottom = 126.571
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_f74lx")
+theme_override_font_sizes/font_size = 30
+text = "Open (E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="furniture" type="Node2D" parent="."]
+visible = false
+
+[node name="chair" type="StaticBody2D" parent="furniture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/chair"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/chair"]
+position = Vector2(-162.857, 19.5)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_f74lx")
+region_enabled = true
+region_rect = Rect2(1573.32, 1697.29, 576.442, 405.959)
+
+[node name="painting" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/painting"]
+position = Vector2(-171.429, 122.857)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_f74lx")
+region_enabled = true
+region_rect = Rect2(370.995, 863.353, 301.115, 298.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/painting"]
+
+[node name="furnbooks" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/furnbooks"]
+position = Vector2(120, 5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_f74lx")
+region_enabled = true
+region_rect = Rect2(1107.91, 0, 570.207, 899.444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/furnbooks"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="furniture/furnbooks"]
+position = Vector2(180, -1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_f74lx")
+region_enabled = true
+region_rect = Rect2(1737.21, 4.2739, 499.145, 849.636)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/StaticBody2D"]
+position = Vector2(165.714, 195)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_f74lx")
+region_enabled = true
+region_rect = Rect2(1702.19, 1190.37, 540.952, 466.473)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/StaticBody2D"]
+
+[node name="young_girl_npc" parent="." instance=ExtResource("7_ptc3g")]
+visible = false
+position = Vector2(-191.43, -27)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="body_entered" from="door_area" to="." method="_on_door_area_body_entered"]
+[connection signal="body_exited" from="door_area" to="." method="_on_door_area_body_exited"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://junrehn6em56"]
+
+[ext_resource type="Texture2D" uid="uid://bqvh23f7h6d62" path="res://assets/props/trees/TREE 11_SANDY GREEN.png" id="1_d888c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ot8u"]
+size = Vector2(30, 4)
+
+[node name="tree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d888c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_7ot8u")
+one_way_collision = true

@@ -19,3 +19,6 @@ func update_animation():
 	elif player.direction < 0:
 		player.animated_sprite_2d.flip_h = true
 		
+func use_item():
+	print("foi")
+	finished.emit("UseItemState")

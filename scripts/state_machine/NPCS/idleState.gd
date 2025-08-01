@@ -7,10 +7,10 @@ var turn_timer = 0.0
 func enter(previous_state_path: String, data := {}) -> void:
 	$"../..".velocity.x = 0
 	update_animation()
-	if npc.target_p != null:
-		if npc.seen_player:
-			DialogueManager.show_dialogue_balloon(druid_npc.resource, "start")
-			print("start talking")
+	#if npc.target_p != null:
+		#if npc.seen_player:
+			#DialogueManager.show_dialogue_balloon(druid_npc.resource, "start")
+			#print("start talking")
 		
 	
 func physics_update(delta: float) -> void:

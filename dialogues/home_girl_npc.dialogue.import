@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://mddtkpfl3t4k"
+path="res://.godot/imported/home_girl_npc.dialogue-2b387f4d6edceff9270477da1e912261.tres"
+
+[deps]
+
+source_file="res://dialogues/home_girl_npc.dialogue"
+dest_files=["res://.godot/imported/home_girl_npc.dialogue-2b387f4d6edceff9270477da1e912261.tres"]
+
+[params]
+
+defaults=true
