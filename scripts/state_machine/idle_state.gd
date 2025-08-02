@@ -22,3 +22,6 @@ func update_animation():
 func use_item():
 	print("foi")
 	finished.emit("UseItemState")
+
+func change_to_pet_state():
+	finished.emit("PetState")

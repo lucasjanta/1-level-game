@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://g6eavry6dwu2"]
+[gd_scene load_steps=88 format=3 uid="uid://g6eavry6dwu2"]
 
 [ext_resource type="Script" uid="uid://dcvy5asfybjc5" path="res://scripts/player.gd" id="1_2w11d"]
 [ext_resource type="Texture2D" uid="uid://boq0r27gcr3fx" path="res://assets/character/player/Character1M_1_idle_0.png" id="1_51ujp"]
@@ -72,6 +72,7 @@
 [ext_resource type="Script" uid="uid://coue4jmhayho" path="res://scripts/state_machine/land_state.gd" id="70_vdulj"]
 [ext_resource type="Script" uid="uid://2lfp6icm38re" path="res://scripts/state_machine/use_item_state.gd" id="71_6c3st"]
 [ext_resource type="Texture2D" uid="uid://b6iv76dbqg2kg" path="res://assets/props/icons/animated/AppleMoving1.png" id="72_1da1t"]
+[ext_resource type="Script" uid="uid://7jq77elvbwmm" path="res://scripts/state_machine/pet_state.gd" id="72_p21yu"]
 [ext_resource type="Texture2D" uid="uid://dcyy468nuys03" path="res://assets/props/icons/animated/AppleMoving2.png" id="73_p21yu"]
 [ext_resource type="Texture2D" uid="uid://crkgrla6vbja6" path="res://assets/props/icons/animated/AppleMoving3.png" id="74_irpag"]
 [ext_resource type="Texture2D" uid="uid://5lkafd5fis2n" path="res://assets/props/icons/animated/AppleMoving4.png" id="75_bpsgo"]
@@ -483,9 +484,52 @@ tracks/4/keys = {
 "values": [&"use"]
 }
 
+[sub_resource type="Animation" id="Animation_irpag"]
+resource_name = "pet"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"pickup_wall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateMachine/PetState")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"next_state"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4vfid"]
 _data = {
 &"RESET": SubResource("Animation_w5j5w"),
+&"pet": SubResource("Animation_irpag"),
 &"use": SubResource("Animation_cbf1i")
 }
 
@@ -518,6 +562,9 @@ script = ExtResource("70_vdulj")
 
 [node name="UseItemState" type="Node" parent="StateMachine"]
 script = ExtResource("71_6c3st")
+
+[node name="PetState" type="Node" parent="StateMachine"]
+script = ExtResource("72_p21yu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -25)
