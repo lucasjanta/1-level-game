@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rtn5rgmoglj"]
+
+[ext_resource type="Texture2D" uid="uid://d243qccjpo4yd" path="res://assets/props/houses/Free  Village Game Assets.png" id="1_qe70y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2hxd"]
+size = Vector2(368, 6)
+
+[node name="house_4" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qe70y")
+region_enabled = true
+region_rect = Rect2(1731.62, 1104.91, 392.063, 300.171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -130)
+shape = SubResource("RectangleShape2D_v2hxd")
+one_way_collision = true

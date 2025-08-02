@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyc31qqxqvml2"]
+
+[ext_resource type="Texture2D" uid="uid://d243qccjpo4yd" path="res://assets/props/houses/Free  Village Game Assets.png" id="1_11cws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njqm3"]
+size = Vector2(131, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45pex"]
+size = Vector2(132, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xemxm"]
+size = Vector2(271, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kqr7"]
+size = Vector2(204, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqvm"]
+size = Vector2(184, 3)
+
+[node name="house_3" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_11cws")
+region_enabled = true
+region_rect = Rect2(2075.12, 560.941, 600.081, 387.094)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-218.5, 109)
+shape = SubResource("RectangleShape2D_njqm3")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(70, 69.5)
+shape = SubResource("RectangleShape2D_45pex")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-136, -20)
+shape = SubResource("RectangleShape2D_xemxm")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(110, -29)
+shape = SubResource("RectangleShape2D_7kqr7")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-120, -172.5)
+shape = SubResource("RectangleShape2D_viqvm")
+one_way_collision = true
