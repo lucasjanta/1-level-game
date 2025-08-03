@@ -563,7 +563,7 @@ sources/1 = SubResource("TileSetAtlasSource_4nkto")
 size = Vector2(605.714, 54.2857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7g0b"]
-size = Vector2(96, 154.5)
+size = Vector2(48, 154.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2fux"]
 size = Vector2(20, 283)
@@ -821,7 +821,7 @@ script = ExtResource("21_x2fux")
 [node name="ElfSpawn" type="Area2D" parent="elf_trigger"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elf_trigger/ElfSpawn"]
-position = Vector2(2976, 164.25)
+position = Vector2(3000, 164.25)
 shape = SubResource("RectangleShape2D_s7g0b")
 
 [node name="Marker2D" type="Marker2D" parent="elf_trigger"]

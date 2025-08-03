@@ -154,13 +154,12 @@ text = "Item Name"
 layout_mode = 2
 
 [node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ca2qj")
-text = "Description of the item"
-
-[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(490, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_ca2qj")
+text = "Description of the item"
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -179,6 +178,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ca2qj")
 text = "0"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer/AppleSlot/AppleButton" to="." method="_on_apple_button_pressed"]
