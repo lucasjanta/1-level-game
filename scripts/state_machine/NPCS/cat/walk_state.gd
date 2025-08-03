@@ -20,4 +20,7 @@ func update_animation():
 
 func _on_interact_area_body_entered(body):
 	if body is Player:
+		if !npc.seen_player:
+			npc.can_interact = true
+			npc.seen_player = true
 		finished.emit("IdleState")

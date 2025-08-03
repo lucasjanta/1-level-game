@@ -181,6 +181,7 @@ script = ExtResource("3_hrkam")
 script = ExtResource("4_wxy0r")
 
 [node name="talk_label" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -200,11 +201,12 @@ vertical_alignment = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fh31n")
 animation = &"idle"
-frame_progress = 0.330426
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("8_wxy0r")
 dialogue_path = "res://dialogues/home_girl_npc.dialogue"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="body_entered" from="interact_area" to="StateMachine/IdleState" method="_on_interact_area_body_entered"]
 [connection signal="body_entered" from="interact_area" to="StateMachine/WalkState" method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="interact_area" to="StateMachine/IdleState" method="_on_interact_area_body_exited"]

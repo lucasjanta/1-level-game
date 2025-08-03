@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bojwpk7btq6le"]
+
+[ext_resource type="Texture2D" uid="uid://p5vjx7wa1ig0" path="res://assets/props/graveyard/trees-pixelart.png" id="1_s18s0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws3sf"]
+size = Vector2(39, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yaku"]
+size = Vector2(34, 2)
+
+[node name="tree2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s18s0")
+region_enabled = true
+region_rect = Rect2(301.028, 33.9607, 78.0247, 59.0849)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.5, -16)
+shape = SubResource("RectangleShape2D_ws3sf")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(21, -8)
+shape = SubResource("RectangleShape2D_6yaku")
+one_way_collision = true

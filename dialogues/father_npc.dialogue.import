@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dimfbs7pwfci3"
+path="res://.godot/imported/father_npc.dialogue-7f6acd999f1d3ddf91f04ea4adf01efa.tres"
+
+[deps]
+
+source_file="res://dialogues/father_npc.dialogue"
+dest_files=["res://.godot/imported/father_npc.dialogue-7f6acd999f1d3ddf91f04ea4adf01efa.tres"]
+
+[params]
+
+defaults=true

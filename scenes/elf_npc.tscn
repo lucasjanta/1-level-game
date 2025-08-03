@@ -1,0 +1,156 @@
+[gd_scene load_steps=27 format=3 uid="uid://g563s6r1asaj"]
+
+[ext_resource type="Texture2D" uid="uid://cht4x23ehsn26" path="res://assets/character/Elf king/fall/1.png" id="1_c7co3"]
+[ext_resource type="Script" uid="uid://3rn0vc3pp1ky" path="res://scripts/elf_npc.gd" id="1_kastp"]
+[ext_resource type="Texture2D" uid="uid://cndawuln0ktf8" path="res://assets/character/Elf king/fall/2.png" id="2_3hg2g"]
+[ext_resource type="Texture2D" uid="uid://bg7vmxhdp2mkr" path="res://assets/character/Elf king/fall/3.png" id="3_urjox"]
+[ext_resource type="Texture2D" uid="uid://bkkvbolwqmeph" path="res://assets/character/Elf king/fall/4.png" id="4_rjmbq"]
+[ext_resource type="Texture2D" uid="uid://ku0deewlkhrq" path="res://assets/character/Elf king/Idle/1.png" id="5_coug5"]
+[ext_resource type="Texture2D" uid="uid://cev2mm64w0f7q" path="res://assets/character/Elf king/Idle/2.png" id="6_1311x"]
+[ext_resource type="Texture2D" uid="uid://c0ycboixv8m34" path="res://assets/character/Elf king/Idle/3.png" id="7_kastp"]
+[ext_resource type="Texture2D" uid="uid://cywqev45kyqlg" path="res://assets/character/Elf king/Idle/4.png" id="8_5aogt"]
+[ext_resource type="Texture2D" uid="uid://b2ltwa45fntwy" path="res://assets/character/Elf king/walk/1.png" id="9_8aq4m"]
+[ext_resource type="Texture2D" uid="uid://cmqhjb6lv5hsy" path="res://assets/character/Elf king/walk/2.png" id="10_jdtvi"]
+[ext_resource type="Texture2D" uid="uid://cexnnrasldgcg" path="res://assets/character/Elf king/walk/3.png" id="11_fj0d7"]
+[ext_resource type="Texture2D" uid="uid://ddc38aw6yopx0" path="res://assets/character/Elf king/walk/4.png" id="12_jx4om"]
+[ext_resource type="Texture2D" uid="uid://mxtxm0rdmq7c" path="res://assets/character/Elf king/walk/5.png" id="13_ghh0n"]
+[ext_resource type="Texture2D" uid="uid://dxomieliwvqbj" path="res://assets/character/Elf king/walk/6.png" id="14_t0nbp"]
+[ext_resource type="Texture2D" uid="uid://d4fh8f5585gcu" path="res://assets/character/Elf king/walk/7.png" id="15_0rgpx"]
+[ext_resource type="Texture2D" uid="uid://ogp2848diowy" path="res://assets/character/Elf king/walk/8.png" id="16_psh4y"]
+[ext_resource type="Script" uid="uid://bwvn4r35oomjp" path="res://scripts/state_machine/state_machine.gd" id="17_coug5"]
+[ext_resource type="Script" uid="uid://fqonqkhe3th3" path="res://scripts/state_machine/NPCS/elf/idle_state.gd" id="18_1311x"]
+[ext_resource type="Script" uid="uid://dlj0hckhk3yhb" path="res://scripts/state_machine/NPCS/elf/walk_state.gd" id="19_kastp"]
+[ext_resource type="Script" uid="uid://crhkbr1nuktym" path="res://scenes/fall_state.gd" id="20_5aogt"]
+[ext_resource type="FontFile" uid="uid://dc22c7i6h0wfw" path="res://assets/fonts/Kenney Mini.ttf" id="22_5aogt"]
+[ext_resource type="Script" uid="uid://bu0mx7ieib1g6" path="res://dialogues/dialogue_manager.gd" id="23_5aogt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhqb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c7co3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3hg2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urjox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjmbq")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_coug5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1311x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kastp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5aogt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8aq4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jdtvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fj0d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jx4om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ghh0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t0nbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0rgpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_psh4y")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gm4s"]
+size = Vector2(20, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aq4m"]
+size = Vector2(104, 55)
+
+[node name="elf_npc" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_kastp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uhqb2")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_1gm4s")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_8aq4m")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("17_coug5")
+initial_state = NodePath("FallState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("18_1311x")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
+script = ExtResource("19_kastp")
+
+[node name="FallState" type="Node" parent="StateMachine"]
+script = ExtResource("20_5aogt")
+
+[node name="talk_label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = -50.0
+offset_right = 23.0
+offset_bottom = -27.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("22_5aogt")
+theme_override_font_sizes/font_size = 12
+text = "Talk (E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("23_5aogt")
+dialogue_path = "res://dialogues/elf_npc.dialogue"
+
+[connection signal="body_entered" from="InteractArea" to="StateMachine/IdleState" method="_on_interact_area_body_entered"]
+[connection signal="body_entered" from="InteractArea" to="StateMachine/WalkState" method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="StateMachine/IdleState" method="_on_interact_area_body_exited"]

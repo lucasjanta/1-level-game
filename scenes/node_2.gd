@@ -21,8 +21,7 @@ func update_animation():
 
 
 func _on_interact_area_body_entered(body):
-	if body is Player:
-		npc.seen_player = true
+	if body is Player and !npc.seen_player:
 		npc.target_p = body
 		var distance_x = npc.target_p.global_position.x - npc.global_position.x
 		var direction = sign(distance_x)
@@ -30,4 +29,7 @@ func _on_interact_area_body_entered(body):
 			npc.animated_sprite_2d.flip_h = false
 		elif direction < 0:
 			npc.animated_sprite_2d.flip_h = true
+		
+		DialogueManager.show_dialogue_balloon(npc.resource, "start")
+		npc.seen_player = true
 		finished.emit("IdleState")

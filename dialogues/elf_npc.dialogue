@@ -1,0 +1,11 @@
+~ start
+Elf King: [[Hi|Hello|Howdy]] stranger, I'm the Elf King and this is my village.
+Elf King: Who are you? What are you doing here?
+- I'm looking for fun with the ladies!!!
+	Elf King: Ohoho! You are a little freak right?
+	Elf King: Well, here is no place for you, please go away!
+- I'm a traveler looking for a cool place to buy smoe things...
+	Elf King: Well... If you want to help our economy...
+	Elf King: You can pass!
+	do Global.force_field_off()
+=> END

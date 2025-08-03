@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bg3rbfmvk5kfm"
+path="res://.godot/imported/elf_npc.dialogue-fac3d920e93c1923221583c6b3f2fbb3.tres"
+
+[deps]
+
+source_file="res://dialogues/elf_npc.dialogue"
+dest_files=["res://.godot/imported/elf_npc.dialogue-fac3d920e93c1923221583c6b3f2fbb3.tres"]
+
+[params]
+
+defaults=true

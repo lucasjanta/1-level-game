@@ -220,7 +220,7 @@ animations = [{
 size = Vector2(12, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsajt"]
-size = Vector2(154, 80)
+size = Vector2(212, 40)
 
 [node name="DruidNPC" type="CharacterBody2D"]
 collision_layer = 2
@@ -249,7 +249,7 @@ script = ExtResource("8_73xvu")
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, -24)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_qsajt")
 
 [node name="DialogueManager" type="Node" parent="."]
