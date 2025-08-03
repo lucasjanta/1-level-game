@@ -1,10 +1,29 @@
 ~ start
-Elf King: [[Hi|Hello|Greetings]] stranger. I am the Elf King, ruler of this village.
-Elf King: Tell me, who are you and what brings you here?
-- I'm just looking for fun with the ladies!
-    Elf King: Ohoho... Quite bold, aren't you? Unfortunately, this is not that kind of village. Please leave.
-- I'm a traveler looking for a nice place to shop.
-    Elf King: Hmm... If you truly wish to help our economy...
-    Elf King: I suppose I can let you pass.
-    do Global.force_field_off()
+if Global.king_first_impression == false:
+	Elf King: [[Hi|Hello|Greetings]] stranger. I am the Elf King, ruler of this village.
+	Elf King: Tell me, who are you and what brings you here?
+	- I'm just looking for fun with the ladies!
+		Elf King: Ohoho... Quite bold, aren't you? Unfortunately, this is not that kind of village. Please leave.
+	- I'm a traveler looking for a nice place to shop.
+		Elf King: Hmm... If you truly wish to help our economy...
+		Elf King: I suppose I can let you pass.
+		do Global.force_field_off()
+		set Global.king_first_impression = true
+else:
+	Elf King: Back again, traveler? Have you thought about staying in our village?
+	- Yes, can I live here?
+		if Global.coins < 100 and Global.talk_to_daughter == true and Global.warn_father == true and Global.pet_cat == true:
+			Elf King: I see you've shown kindness to our people, treated our animals with respect,
+			Elf King: and supported our economy by spending your gold here.
+			Elf King: Very well, you may live among us as a trusted friend.
+			do Global.game_won()
+		else:
+			Elf King: Hmm... Our village only welcomes those who:
+			Elf King: - Aid our people in times of need,
+			Elf King: - Care for our beloved animals,
+			Elf King: - And contribute to our economy instead of hoarding gold.
+			Elf King: Show true goodwill in these ways, and we can speak of you living here.
+	- No, just passing by.  
+		Elf King: Very well, traveler. Enjoy your visit.
+
 => END

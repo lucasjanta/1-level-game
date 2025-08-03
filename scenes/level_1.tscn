@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=4 uid="uid://brdmgerhj1pk1"]
+[gd_scene load_steps=37 format=4 uid="uid://brdmgerhj1pk1"]
 
 [ext_resource type="Texture2D" uid="uid://yynjd7tjoic1" path="res://assets/tilesets/Background_2.png" id="1_5xbjy"]
+[ext_resource type="Script" uid="uid://cf6cb32xos2no" path="res://scripts/level_1.gd" id="1_k8ld0"]
 [ext_resource type="Texture2D" uid="uid://coxhg6cfhc7i6" path="res://assets/tilesets/Background_1.png" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://g6eavry6dwu2" path="res://scenes/player.tscn" id="2_bswci"]
 [ext_resource type="Texture2D" uid="uid://m14q5jntsyl1" path="res://assets/tilesets/oak_woods_tileset.png" id="3_5xbjy"]
@@ -26,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bcm1kmai3dd6g" path="res://scenes/cat_npc.tscn" id="18_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://x6wycs881ltv" path="res://scenes/father_npc.tscn" id="21_s7g0b"]
 [ext_resource type="Script" uid="uid://bq1vip68wpyvr" path="res://scripts/elf_trigger.gd" id="21_x2fux"]
+[ext_resource type="PackedScene" uid="uid://ch7roesaoifbg" path="res://scenes/game_won.tscn" id="27_mmfjm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nkto"]
 texture = ExtResource("3_5xbjy")
@@ -703,6 +705,7 @@ _data = {
 }
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_k8ld0")
 metadata/_edit_vertical_guides_ = [4100.0]
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
@@ -865,6 +868,10 @@ zoom = Vector2(1.4, 1.4)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Shop2" parent="CanvasLayer" instance=ExtResource("13_7gny6")]
+visible = false
+
+[node name="Game_Won" parent="CanvasLayer" instance=ExtResource("27_mmfjm")]
+process_mode = 2
 visible = false
 
 [connection signal="body_entered" from="elf_trigger/ElfSpawn" to="elf_trigger" method="_on_elf_spawn_body_entered"]

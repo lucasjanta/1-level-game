@@ -1,11 +1,28 @@
 ~ start
 Merchant: [[Hi|Hello|Howdy]], do you want to buy something?
-- Yeah, let me see what you have
+- Yeah, let me see what you have.
 	set Global.shop_screen.visible = true
 	=> END
 - No, I want to ask something...
-	Nathan: Go ahead
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+	Merchant: Sure, traveler. What do you want to know?
+if Global.druid_pot == true:
+	- Where can I find the village?
+		Merchant: Just keep walking straight down this path and you can’t miss it.
+		- Thanks, that's helpful.
+			Merchant: No problem, always glad to help a fellow traveler.
+	- What's the deal with that Suspicious Druid?
+		Merchant: Ah, that guy... He buys cheap elixirs from me every week.
+		Merchant: Then he resells them to clueless outsiders for triple the price!
+		Merchant: Calls them "rare magical potions"... yeah, right.
+		- So, he's a scammer?
+			Merchant: Let’s just say he’s an "entrepreneur with no ethics."
+	- Never mind, I’ll go now.
+		Merchant: Safe travels!
+else:
+	- Where can I find the village?
+		Merchant: Just keep walking straight down this path and you can’t miss it.
+		- Thanks, that's helpful.
+			Merchant: No problem, always glad to help a fellow traveler.
+	- Never mind, I’ll go now.
+		Merchant: Safe travels!
 => END

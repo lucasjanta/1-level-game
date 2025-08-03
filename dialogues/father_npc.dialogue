@@ -1,26 +1,108 @@
 ~ start
-Father: Hm? You look like you've got something to say, traveler.  
-- Are you the father of a young girl back in the village? She’s worried sick!  
-- I think I met your daughter... she was terrified being alone.
-    Father: Ah, my little one... Yes, yes, that's my daughter.  
-    Father: I know I’ve been gone for two days, but you see... I’m an adventurer!  
-    Father: Out there, fighting monsters, risking my life to bring gold and food to her table!  
-    - Adventurer, huh? Then why can I smell booze all the way from here?  
-    - Risking your life? Smells to me like you've been risking your liver.  
-        Father: W-Whaaat? No, no, that’s just... a new monster repellent I’m testing! Smells like ale, very effective.  
-        - Sure... Sounds more like you’ve been drinking nonstop. 
-            Father: ...Okay, okay, maybe I had a drink. Or two. Or... ten.  
-            Father: But hey, life as an adventurer is stressful!  
-            - Your daughter was so worried she screamed at me when I... uh... accidentally walked into your house.  
-                Father: YOU WHAT?!  
-                Father: Wait, wait, let me get this straight... you broke into my home, scared my daughter,  
-                Father: and now you’re here judging ME for having a drink?  
-                - Hey, I’m just saying you should go back before she calls the guards on us both!  
-                - Look, she misses you, just go home before this gets worse.  
-                    Father: ...Fair point.  
-                    Father: Alright, I'm heading home right now.  
-                    Father: I’ll never leave my daughter alone again...  
-                    Father: And I’ll make sure to lock the door from now on. 
-                    Father: Too many lunatics wandering into houses these days... *glares at you*  
+if Global.talk_to_daughter == true:
+	Father: Hm? You look like you've got something to say, traveler.
+	- Are you the father of a young girl back in the village? She’s worried sick!
+		Father: Ah, my little one... Yes, yes, that's my daughter.
+		Father: I know I’ve been gone for two days, but you see... I’m an adventurer!
+		Father: Out there, fighting monsters, risking my life to bring gold and food to her table!
+		- Adventurer, huh? Then why can I smell booze all the way from here?
+			Father: W-Whaaat? No, no, that’s just... a new monster repellent I’m testing! Smells like ale, very effective.
+			- Sure... Sounds more like you’ve been drinking nonstop.
+				Father: ...Okay, okay, maybe I had a drink. Or two. Or... ten.
+				Father: But hey, life as an adventurer is stressful!
+				- Your daughter was so worried she screamed at me when I... uh... accidentally walked into your house.
+					Father: YOU WHAT?!
+					Father: Wait, wait, let me get this straight... you broke into my home, scared my daughter,
+					Father: and now you’re here judging ME for having a drink?
+					- Hey, I’m just saying you should go back before she calls the guards on us both!
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+					- Look, she misses you, just go home before this gets worse.
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+		- Risking your life? Smells to me like you've been risking your liver.
+			Father: W-Whaaat? No, no, that’s just... a new monster repellent I’m testing! Smells like ale, very effective.
+			- Sure... Sounds more like you’ve been drinking nonstop.
+				Father: ...Okay, okay, maybe I had a drink. Or two. Or... ten.
+				Father: But hey, life as an adventurer is stressful!
+				- Your daughter was so worried she screamed at me when I... uh... accidentally walked into your house.
+					Father: YOU WHAT?!
+					Father: Wait, wait, let me get this straight... you broke into my home, scared my daughter,
+					Father: and now you’re here judging ME for having a drink?
+					- Hey, I’m just saying you should go back before she calls the guards on us both!
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+					- Look, she misses you, just go home before this gets worse.
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+	- I think I met your daughter... she was terrified being alone.
+		Father: Ah, my little one... Yes, yes, that's my daughter.
+		Father: I know I’ve been gone for two days, but you see... I’m an adventurer!
+		Father: Out there, fighting monsters, risking my life to bring gold and food to her table!
+		- Adventurer, huh? Then why can I smell booze all the way from here?
+			Father: W-Whaaat? No, no, that’s just... a new monster repellent I’m testing! Smells like ale, very effective.
+			- Sure... Sounds more like you’ve been drinking nonstop.
+				Father: ...Okay, okay, maybe I had a drink. Or two. Or... ten.
+				Father: But hey, life as an adventurer is stressful!
+				- Your daughter was so worried she screamed at me when I... uh... accidentally walked into your house.
+					Father: YOU WHAT?!
+					Father: Wait, wait, let me get this straight... you broke into my home, scared my daughter,
+					Father: and now you’re here judging ME for having a drink?
+					- Hey, I’m just saying you should go back before she calls the guards on us both!
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+					- Look, she misses you, just go home before this gets worse.
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+		- Risking your life? Smells to me like you've been risking your liver.
+			Father: W-Whaaat? No, no, that’s just... a new monster repellent I’m testing! Smells like ale, very effective.
+			- Sure... Sounds more like you’ve been drinking nonstop.
+				Father: ...Okay, okay, maybe I had a drink. Or two. Or... ten.
+				Father: But hey, life as an adventurer is stressful!
+				- Your daughter was so worried she screamed at me when I... uh... accidentally walked into your house.
+					Father: YOU WHAT?!
+					Father: Wait, wait, let me get this straight... you broke into my home, scared my daughter,
+					Father: and now you’re here judging ME for having a drink?
+					- Hey, I’m just saying you should go back before she calls the guards on us both!
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+					- Look, she misses you, just go home before this gets worse.
+						Father: ...Fair point.
+						Father: Alright, I'm heading home right now.
+						Father: I’ll never leave my daughter alone again...
+						Father: And I’ll make sure to lock the door from now on.
+						Father: Too many lunatics wandering into houses these days... *glares at you*
+						set Global.warn_father = true
+else:
+	Father: Huh? Sorry, do I know you?
+	- Never mind. => END
 - End the conversation => END
 => END

@@ -1,28 +1,36 @@
 ~ start
-Young Girl: AAAAAAAAAAA! What are you doing in my house?!
-- Sorry! In my homeland, it's normal to visit strangers' homes...
-    Young Girl: Well, in THIS land it's called trespassing! I'm calling the guards!
-    - Wait, wait! Is there something I can do to make you NOT call them?
-        Young Girl: Hmph... Maybe. My father disappeared two days ago.
-        Young Girl: If you can bring him back, I’ll forget this ever happened.
-        - I’ll find your father, promise.
-            Young Girl: You better. Or the guards will hear all about you!
-        - What if I don't...?
-            Young Girl: GUAAAARDS!!!!
-            - Ok, ok, I’ll find him!
-                Young Girl: You better!
-
-- What's wrong?
-    Young Girl: WHAT'S WRONG? You're a stranger in [wave]MY HOUSE[/wave]!
-    Young Girl: I’ll call the guards right now!
-    - Please, no... Is there something I can do to make you NOT call them?
-        Young Girl: Hmph... Actually... My father’s been missing for two days.
-        Young Girl: Bring him back safe, and maybe I won't report you.
-        - Deal, I'll look for him.
-            Young Girl: Good. Don’t waste time!
-        - What if I don't...?
-            Young Girl: GUAAAARDS!!!!
-            - Ok, ok, I’ll find him!
-                Young Girl: You better!
-    - End the conversation => END
+if Global.talk_to_daughter == false:
+	Young Girl: AAAAAAAAAAA! What are you doing in my house?!
+	- Sorry! In my homeland, it's normal to visit strangers' homes...
+		Young Girl: Well, in THIS land it's called trespassing! I'm calling the guards!
+		- Wait, wait! Is there something I can do to make you NOT call them?
+			Young Girl: Hmph... Maybe. My father disappeared two days ago.
+			Young Girl: If you can bring him back, I’ll forget this ever happened.
+			set Global.talk_to_daughter = true
+			- I’ll find your father, promise.
+				Young Girl: You better. Or the guards will hear all about you!
+			- What if I don't...?
+				Young Girl: GUAAAARDS!!!!
+				- Ok, ok, I’ll find him!
+					Young Girl: You better!
+	- What's wrong?
+		Young Girl: WHAT'S WRONG? You're a stranger in [wave]MY HOUSE[/wave]!
+		Young Girl: I’ll call the guards right now!
+		- Please, no... Is there something I can do to make you NOT call them?
+			Young Girl: Hmph... Actually... My father’s been missing for two days.
+			Young Girl: Bring him back safe, and maybe I won't report you.
+			set Global.talk_to_daughter = true
+			- Deal, I'll look for him.
+				Young Girl: Good. Don’t waste time!
+			- What if I don't...?
+				Young Girl: GUAAAARDS!!!!
+				- Ok, ok, I’ll find him!
+					Young Girl: You better!
+else:
+	Young Girl: What are you doing in here?!
+	Young Girl: Go find my father already and stop invading my house!
+	- I'm on it, don't worry.
+		Young Girl: Then stop wasting time and get moving!
+	- Alright, I'm leaving...
+		Young Girl: Good! And don't come back without him!
 => END
