@@ -15,10 +15,12 @@ func update_animation():
 
 
 func _on_interact_area_body_entered(body):
-	if body is Player and !npc.seen_player:
-		DialogueManager.show_dialogue_balloon(npc.resource, "start")
-		npc.can_interact = true
-		if npc.seen_player and npc.can_interact:
+	if body is Player:
+		if !npc.seen_player:
+			DialogueManager.show_dialogue_balloon(npc.resource, "start")
+			npc.seen_player = true
+		if npc.seen_player:
+			npc.can_interact = true
 			npc.talk_label.visible = true
 		
 		
@@ -26,6 +28,6 @@ func _on_interact_area_body_exited(body):
 	if body is Player:
 		npc.talk_label.visible = false
 		npc.can_interact = false
-	if Global.force_field.disabled:
-		finished.emit("WalkState")
-		npc.seen_player = true
+		if Global.force_field.disabled:
+			finished.emit("WalkState")
+			npc.seen_player = true

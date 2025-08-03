@@ -104,5 +104,4 @@ if Global.talk_to_daughter == true:
 else:
 	Father: Huh? Sorry, do I know you?
 	- Never mind. => END
-- End the conversation => END
 => END

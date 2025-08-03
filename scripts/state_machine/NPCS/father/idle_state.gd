@@ -13,7 +13,7 @@ func physics_update(delta: float) -> void:
 		npc.animated_sprite_2d.flip_h = true
 	elif npc.target_p.global_position > npc.global_position:
 		npc.animated_sprite_2d.flip_h = false
-	if npc.seen_player:
+	if Global.warn_father and !npc.can_interact:
 		finished.emit("WalkState")
 	
 
@@ -22,12 +22,12 @@ func update_animation():
 
 
 func _on_interact_area_body_entered(body):
-	if body is Player and !npc.seen_player:
+	if body is Player and !Global.warn_father:
 		npc.can_interact = true
 		npc.talk_label.visible = true
 
 
 func _on_interact_area_body_exited(body):
-	if body is Player and !npc.seen_player:
+	if body is Player:
 		npc.can_interact = false
 		npc.talk_label.visible = false

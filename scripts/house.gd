@@ -14,13 +14,19 @@ extends StaticBody2D
 
 var can_enter := false
 var inside_doors := false
+var locked := false
 
 
 func _on_door_area_body_entered(body):
-	if body is Player:
+	if body is Player and !locked:
 		door_label.visible = true
 		can_enter = true
-		
+	if body is Player and locked:
+		door_label.visible = true
+		door_label.text = "Locked!"
+	if body is Father:
+		body.queue_free()
+		locked = true
 
 func _on_door_area_body_exited(body):
 	if body is Player:

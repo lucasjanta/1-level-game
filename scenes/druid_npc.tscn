@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctvwgeyw37hby"]
+[gd_scene load_steps=41 format=3 uid="uid://ctvwgeyw37hby"]
 
 [ext_resource type="Texture2D" uid="uid://dsapipkrvfo1c" path="res://assets/character/DuskBorne-Druid/SpriteSheet/DruidDeath001-Sheet.png" id="1_45duo"]
 [ext_resource type="Script" uid="uid://c8l2icf03ongy" path="res://scripts/npc_1.gd" id="1_y1i5t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bwvn4r35oomjp" path="res://scripts/state_machine/state_machine.gd" id="6_mhbqt"]
 [ext_resource type="Script" uid="uid://bm8eucd7cy8o0" path="res://scripts/state_machine/NPCS/idleState.gd" id="7_mhbqt"]
 [ext_resource type="Script" uid="uid://lauiu0bwebms" path="res://scripts/state_machine/NPCS/walkState.gd" id="8_73xvu"]
+[ext_resource type="Script" uid="uid://74v5auemivxl" path="res://scripts/state_machine/NPCS/vanish_state.gd" id="9_20xfu"]
 [ext_resource type="Script" uid="uid://bu0mx7ieib1g6" path="res://dialogues/dialogue_manager.gd" id="9_qsajt"]
 [ext_resource type="FontFile" uid="uid://dc22c7i6h0wfw" path="res://assets/fonts/Kenney Mini.ttf" id="10_sb6lx"]
 
@@ -229,7 +230,7 @@ script = ExtResource("1_y1i5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gvuew")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -245,6 +246,9 @@ script = ExtResource("7_mhbqt")
 
 [node name="WalkState" type="Node" parent="StateMachine"]
 script = ExtResource("8_73xvu")
+
+[node name="VanishState" type="Node" parent="StateMachine"]
+script = ExtResource("9_20xfu")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
@@ -274,6 +278,7 @@ text = "Talk (E)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/VanishState" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="StateMachine/idleState" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/idleState" method="_on_detection_area_body_exited"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/WalkState" method="_on_detection_area_body_exited"]

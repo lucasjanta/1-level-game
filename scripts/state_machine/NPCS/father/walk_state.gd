@@ -2,7 +2,7 @@ extends NPCState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	npc.animated_sprite_2d.flip_h = true
-	npc.velocity.x = -75
+	npc.velocity.x = -195
 	update_animation()
 	#npc.talk_label.visible = true
 	

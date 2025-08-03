@@ -2,6 +2,8 @@ extends NPCState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	update_animation()
+	if Global.pet_cat == false:
+		Global.pet_cat = true
 	
 func physics_update(delta: float) -> void:
 	npc.move_and_slide()
