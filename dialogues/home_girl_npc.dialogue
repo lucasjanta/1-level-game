@@ -1,10 +1,28 @@
 ~ start
-Young Girl: AAAAAAAAAAA, what are you doing in my house???
-- Sorry, I'm from a distant land where this is normal
-	Young Girl: What are you talking about? Get the hell out of my home!!
-- What's the matter?
-	Young Girl: You are a stranger in [wave] my house [/wave]
-- Start again => start
-- End the conversation => END
-Young Girl: For more information see the online documentation.
+Young Girl: AAAAAAAAAAA! What are you doing in my house?!
+- Sorry! In my homeland, it's normal to visit strangers' homes...
+    Young Girl: Well, in THIS land it's called trespassing! I'm calling the guards!
+    - Wait, wait! Is there something I can do to make you NOT call them?
+        Young Girl: Hmph... Maybe. My father disappeared two days ago.
+        Young Girl: If you can bring him back, I’ll forget this ever happened.
+        - I’ll find your father, promise.
+            Young Girl: You better. Or the guards will hear all about you!
+        - What if I don't...?
+            Young Girl: GUAAAARDS!!!!
+            - Ok, ok, I’ll find him!
+                Young Girl: You better!
+
+- What's wrong?
+    Young Girl: WHAT'S WRONG? You're a stranger in [wave]MY HOUSE[/wave]!
+    Young Girl: I’ll call the guards right now!
+    - Please, no... Is there something I can do to make you NOT call them?
+        Young Girl: Hmph... Actually... My father’s been missing for two days.
+        Young Girl: Bring him back safe, and maybe I won't report you.
+        - Deal, I'll look for him.
+            Young Girl: Good. Don’t waste time!
+        - What if I don't...?
+            Young Girl: GUAAAARDS!!!!
+            - Ok, ok, I’ll find him!
+                Young Girl: You better!
+    - End the conversation => END
 => END
